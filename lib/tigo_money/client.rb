@@ -1,7 +1,6 @@
 module TigoMoney
   # Executes requests against the TigoMoney API and it returns both a resource needed
   # for different operations and a response object with information on the HTTP request itself
-  require 'pry'
   class Client
     attr_accessor :conn
 
