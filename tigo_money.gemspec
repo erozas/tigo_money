@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_dependency "base64"
   spec.add_dependency "json"
-  spec.add_dependency "mcrypt"
+  spec.add_dependency "ruby-mcrypt"
   spec.add_dependency "openssl"
   spec.add_dependency "savon"
 end
