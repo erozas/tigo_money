@@ -30,7 +30,3 @@ module TigoMoney
     yield(configuration)
   end
 end
-
-module TigoMoney
-  # Your code goes here...
-end
