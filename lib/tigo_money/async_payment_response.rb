@@ -8,7 +8,7 @@ module TigoMoney
 
     def formatted
       resp = self.class.from_savon(@response)
-      resp_body = resp.raw_body[:solicitar_pago_response][:return]
+      resp_body = resp.raw_body[:solicitar_pago_asincrono_response][:return]
       handle_response Formatter.format_response(Decryptor.decrypt(resp_body))
     end
 
