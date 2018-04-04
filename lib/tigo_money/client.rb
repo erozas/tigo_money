@@ -25,7 +25,7 @@ module TigoMoney
       when "solicitar_pago"
         SyncPaymentResponse.new(http_resp).formatted
       when "solicitar_pago_asincrono"
-        AsyncPaymentResponse.formatted(http_resp)
+        AsyncPaymentResponse.new(http_resp).formatted
       when "consultar_estado"
         StatusCheckResponse.formatted(http_resp)
       end
