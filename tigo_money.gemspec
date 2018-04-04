@@ -33,5 +33,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_dependence ""
+  spec.add_dependency "base64"
+  spec.add_dependency "json"
+  spec.add_dependency "mcrypt"
+  spec.add_dependency "openssl"
+  spec.add_dependency "savon"
 end
