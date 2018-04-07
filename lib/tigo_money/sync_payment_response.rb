@@ -43,7 +43,7 @@ module TigoMoney
       when 11
         raise PasswordInputTimeoutError.new("El tiempo para introducir tu contraseña se agotó, por favor intenta iniciar la transacción nuevamente.")
       when 14
-        raise TargetNotRegisteredError.new("Cuenta no habilitada para operar con Tigo Money, regístrate marcando *555# o descarga la App Tigo Money a tu celular. Mas info llama al *555, o contáctate con soporte directamente desde la App Tigo Money")
+        raise TargetNotRegisteredError.new("Esta cuenta no está habilitada para operar con Tigo Money, regístrate marcando *555# o descarga la App Tigo Money a tu celular. Mas info llama al *555, o contáctate con soporte directamente desde la App Tigo Money")
       when 16
         raise TargetSuspendedError.new("Cuenta Tigo Money suspendida, por favor comunícate al *555, o contáctate con soporte directamente desde la App Tigo Money para resolver este problema")
       when 17
