@@ -29,7 +29,7 @@ module TigoMoney
 
     def handle_error_response(response)
       response_code = response["response_code"].to_i
-      puts "The response code of this error is response_code"
+      puts "The response code of this error is #{response_code}"
     end
   end
 end
