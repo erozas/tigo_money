@@ -38,6 +38,12 @@ module TigoMoney
 	# Code: 8
 	class BadPasswordError < Error
 	end
+
+	# Should be raised when the time taken to input the
+	# password exceeds the maximum amount of time permitted by Tigo
+	# Code: 11
+	class PasswordInputTimeoutError < Error
+	end
 	
 	# PasswordRetryExceeded should be raised when the users has
 	# exceeded the maximum amount of password retries
@@ -75,6 +81,12 @@ module TigoMoney
 	# of the transaction is invalid,
 	# Code: 17
 	class InvalidAmountError < Error
+	end
+
+	# Should be raised when there's two consecutive requests
+	# for the same origin and the same amount within one minute
+	# Code: 560
+	class SameOriginSameAmountError < Error
 	end
 
 	# Should be raised when the client doesnt have sufficient funds
