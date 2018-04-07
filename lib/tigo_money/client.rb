@@ -27,7 +27,7 @@ module TigoMoney
       when "solicitar_pago_asincrono"
         AsyncPaymentResponse.new(http_resp).formatted
       when "consultar_estado"
-        StatusCheckResponse.formatted(http_resp)
+        StatusCheckResponse.new(http_resp).formatted
       end
     end
 
@@ -38,28 +38,6 @@ module TigoMoney
       else
         encrypted_params = Encryptor.encrypt(Formatter.format_input(plain_params))
       end
-    end
-
-    def handle_status_response(resp)
-      puts resp
-      # case resp[:status_code]
-      # when 4
-      #   raise AgentNotRegisteredError, "The commerce is not available for TigoMoney payments"
-      # when 7
-      #   raise AccessDeniedError, "You can't access shit"
-      # when 8
-      #   raise BadPasswordError, "Wrong password, amigo"
-      # when 11
-      #   raise PasswordRetryExceededError, "You're way over your limit dickwad"
-      # when 1001
-      #   raise InsufficientFundsError, 'You broke nigga'
-      # when 1002
-      #   raise TransactionRecoveredError, 'The transaction has been recovered'
-      # when 1004
-      #   raise WalletCapExceededError, "You've reached the limit for transactions"
-      # when 1012
-      #   raise PasswordRetryExceededError, "You've exceeded the password retry limit, asshat"
-      # end
     end
   end
 end
