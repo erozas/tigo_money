@@ -60,6 +60,8 @@ module TigoMoney
         raise InsufficientFundsError.new("Tu saldo es insuficiente para completar la transaccion, carga tu cuenta desde la web de tu banco, desde un cajero Tigo Money ó desde un Punto más cercano a ti, marcando *555# o ingresando a la App Tigo Money.")
       when 1002
         raise TransactionRecoveredError.new("Ingresa a Completa tu transaccion desde la App Tigo Money o marcando *555#, Si olvidaste tu PIN, llama al *555, o contáctate con soporte directamente desde la App Tigo Money. Si tu saldo es mayor a Bs 313, debes pasar por un of. Tigo con tu carnet")
+      when 1003
+        raise WalletCapExceededError.new("El monto ingresado excede el limite diario máximo de transacción de tu cuenta. Intenta con un monto menor.")
       when 1004
         raise WalletCapExceededError.new("Estimado cliente, llegaste al límite maximo para realizar transacciones, para consultas por favor llama al *555, o contáctate con soporte directamente desde la App Tigo Money. También puedes pasar por una Of. Tigo con tu Carnet.")
       when 1012
