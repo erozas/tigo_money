@@ -31,6 +31,8 @@ module TigoMoney
       response_code = response["response_code"].to_i
       commerce_name = TigoMoney.configuration.commerce_name || "El comercio"
 
+      raise response_code.inspect
+
       # Raise an appropiate error according to the error code
       case response_code
       when 4
