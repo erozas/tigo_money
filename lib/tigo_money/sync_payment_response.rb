@@ -15,6 +15,7 @@ module TigoMoney
     private
 
     def handle_response(resp)
+      raise resp.inspect
       response_code = resp["response_code"].to_i
       if response_code == 0
         handle_successful_response(resp)
@@ -30,8 +31,6 @@ module TigoMoney
     def handle_error_response(response)
       response_code = response["response_code"].to_i
       commerce_name = TigoMoney.configuration.commerce_name || "El comercio"
-
-      raise response_code.inspect
 
       # Raise an appropiate error according to the error code
       case response_code
