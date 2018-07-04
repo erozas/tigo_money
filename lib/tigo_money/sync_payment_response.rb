@@ -15,7 +15,6 @@ module TigoMoney
     private
 
     def handle_response(resp)
-      raise resp.inspect
       response_code = resp["response_code"].to_i
       if response_code == 0
         handle_successful_response(resp)
