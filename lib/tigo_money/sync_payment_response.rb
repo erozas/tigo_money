@@ -30,7 +30,6 @@ module TigoMoney
     def handle_error_response(response)
       response_code = response["response_code"].to_i
       commerce_name = TigoMoney.configuration.commerce_name || "El comercio"
-      support_email = TigoMoney.configuration.support_email || "email@example.com"
 
       # Raise an appropiate error according to the error code
       case response_code
@@ -67,7 +66,9 @@ module TigoMoney
       when 1012
         raise PasswordRetryExceededError.new("Estimado Cliente excediste el límite de intentos para introducir tu PIN, por favor comunícate con el *555 para solicitar nuevo PIN, o contáctate con soporte directamente desde la App Tigo Money, si tu saldo es mayor a Bs 313, debes pasar por una of. Tigo con tu Carnet.")
       when 9999
-        raise UtibaUnreachableError.new("El servidor está experimentando algún tipo de inconveniente. Por favor, intentar más tarde o comunicate con el soporte en #{support_email}")
+        raise UtibaUnreachableError.new("El servidor está experimentando algún tipo de inconveniente. Por favor, intentar nuevamente más tarde.")
+      else
+        raise StandardError.new("Hubo un problema con el pago y el mismo no se pudo concretar. Comunicate con soporte@drapie.com. El error devuelto fue #{response_code}")
       end
     end
   end
