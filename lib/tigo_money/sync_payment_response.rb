@@ -68,7 +68,7 @@ module TigoMoney
       when 9999
         raise UtibaUnreachableError.new("El servidor está experimentando algún tipo de inconveniente. Por favor, intentar nuevamente más tarde.")
       else
-        raise StandardError.new("Hubo un problema con el pago y el mismo no se pudo concretar. Comunicate con soporte@drapie.com. El error devuelto fue #{response_code}")
+        raise Error.new("Hubo un problema con el pago y el mismo no se pudo concretar. Comunicate con soporte@drapie.com. El error devuelto fue #{response_code}")
       end
     end
   end
